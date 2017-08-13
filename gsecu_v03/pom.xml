@@ -6,8 +6,8 @@
 	
 	<groupId>net.gongple</groupId>
 	<artifactId>gsecu</artifactId>
-	<version>0.2-SNAPSHOT</version>
-	<name>gsecu_v02</name>
+	<version>0.3-SNAPSHOT</version>
+	<name>gsecu_v03</name>
 	<packaging>war</packaging>
 	
 	<properties>
@@ -21,13 +21,6 @@
 		<spring-framework.version>4.2.9.RELEASE</spring-framework.version>
 		<!-- 스프링 프레임워크 시큐리티 버전 -->
 		<spring-framework-security.version>4.2.2.RELEASE</spring-framework-security.version>
-		<!-- 스프링 데이터 JPA 버전 -->
-		<spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
-		<!-- JPA, 하이버네이트 버전 -->
-		<hibernate.version>4.3.10.Final</hibernate.version>
-		<!-- 데이터베이스 버전 -->
-		<tomcat-jdbc.version>7.0.52</tomcat-jdbc.version>
-		<mariadb.version>1.1.7</mariadb.version>
 
 		<!-- JSP, WEB 버전 -->
 		<jsp.version>2.2</jsp.version>
@@ -68,40 +61,6 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-crypto</artifactId>
 			<version>${spring-framework-security.version}</version>
-		</dependency>
-		
-		<!-- 스프링 데이터 JPA -->
-		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-jpa</artifactId>
-			<version>${spring-data-jpa.version}</version>
-		</dependency>
-		
-		<!-- JPA, 하이버네이트 -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-core</artifactId>
-			<version>${hibernate.version}</version>
-		</dependency>
-
-		<!-- MariaDB 데이터베이스 -->
-		<dependency>
-			<groupId>org.mariadb.jdbc</groupId>
-			<artifactId>mariadb-java-client</artifactId>
-			<version>${mariadb.version}</version>
-		</dependency>
-
-		<!-- 커넥션 풀 -->
-		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-jdbc</artifactId>
-			<version>${tomcat-jdbc.version}</version>
-			<scope>compile</scope>
 		</dependency>
 
 		<!-- WEB -->
@@ -153,7 +112,6 @@
 		</dependency>
 	</dependencies>
 
-	<!-- Spring Data JPA 1.8이 스프링 4.0.9에 의존관계를 가지므로 스프링 버전을 직접 관리한다. -->
 	<dependencyManagement>
 		<dependencies>
 			<dependency>

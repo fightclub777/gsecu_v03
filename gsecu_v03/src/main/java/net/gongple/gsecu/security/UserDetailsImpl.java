@@ -6,16 +6,13 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import net.gongple.gsecu.domain.Authority;
-
 public class UserDetailsImpl implements UserDetails {
 	
-	private static final long serialVersionUID = 2012104783359666360L;
+	private static final long serialVersionUID = 1L;
 	
-	private String userid;
-	private String userpw;
-	
-	private List<Authority> auth;
+	private String userid;			//아이디
+	private String userpw;			//비번
+	private List<Authority> auths;	//권한
 	
 	private boolean accountNonExpired = true;
 	private boolean accountNonLocked = true;
@@ -41,7 +38,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return this.auth;
+		return this.auths;
 	}
 
 	@Override
@@ -54,12 +51,12 @@ public class UserDetailsImpl implements UserDetails {
 		return getUserid();
 	}
 
-	public List<Authority> getAuth() {
-		return auth;
+	public List<Authority> getAuths() {
+		return auths;
 	}
 
-	public void setAuth(List<Authority> auth) {
-		this.auth = auth;
+	public void setAuths(List<Authority> auths) {
+		this.auths = auths;
 	}
 
 	public void setAccountNonExpired(boolean accountNonExpired) {
