@@ -29,6 +29,13 @@
 		그렇게 사용자 정보를 채워넣은 UserDetails를 loadUserByUsername() 메소드가
 		반환하게 되어 인증여부(아이디와 비밀번호가 맞는지)를 판정한다.
 		(찾아낸 사용자 정보를 통해, 인증화면에서 입력된 아이디,비번과 맞는지 체크한다.)
+		여기서, <authentication-provider>의 역할은 바로 이 아이디 비번이 맞는지 판정하는 것이다.
+		추후, 비번 체크를 <authentication-provider>에 의존하지 않고 커스터마이징을 하려면
+		<authentication-provider>에 참조 클래스를 적어넣는다.
+		즉, AuthenticationProvider 인터페이스를 구현하는 CustomAuthenticationProvider 클래스를
+		작성한 뒤에 해당 클래스를 bean으로 등록하고, 등록한 bean아이디를 다음과 같이
+		<authentication-provider ref="bean아이디"> ref에 적어넣어 참조하도록 한다.
+		이 부분은 v0.5에서 자세하게 다루겠다.
 
 	3.2. 인터페이스 설명.
 		1) UserDetailsService
